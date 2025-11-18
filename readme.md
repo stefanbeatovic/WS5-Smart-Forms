@@ -43,3 +43,8 @@ The goal of this task was to create a dynamic JavaScript form incorporating key 
 ### Screenshots
 
 ! [Ready form](screenshots/smart_form_ready.jpeg)
+! [Form filled](screenshots/smart_form_filled.jpeg)
+! [Form error 1](screenshots/smart_form_error_message.jpeg)
+! [Form error 2](screenshots/smart_form_errors.jpeg)
+! [Submitted form](screenshots/smart_form_submitted.jpeg)
+! [Console](screenshots/console_saved_data.jpeg)
