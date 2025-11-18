@@ -42,4 +42,4 @@ The goal of this task was to create a dynamic JavaScript form incorporating key 
 
 ### Screenshots
 
-! screenshots/smart_form_ready.png
+! (screenshots/smart_form_ready.png)
