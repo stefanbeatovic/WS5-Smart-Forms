@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Forms in JavaScript</title>
+    <link rel="stylesheet" href="styles.css"> <!-- this links to an external CSS file -->
+</head>
+
+<body>
+    <main class="container"> <!-- main content container, which can then by styled -->
+        <h1>Sign up</h1>
+        <div id="error-summary" class="visually-hidden" role="alert" aria-live="polite"></div>
+        <!-- this div will display error messages in an hidden area, that has accessiblity features -->
+        <form id="signupForm" novalidate>
+            <!-- the novalidate attribute disables the browser's default validation, so creating form with custom validation -->
+            <fieldset> <!-- fieldset groups related elements in a form -->
+                <legend>Your details</legend> <!-- Creates a legend for the fieldset-->
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" required minlength="2" autocomplete="name" aria-describedby="nameHelp"> <!--this is an input field for full name with validation attributes -->
+                <small id="nameHelp" class="help">Enter your first and last name.</small>
+                <!-- this small element provides additional help text for the name input field -->
+                <p class="error" id="nameError"></p>
+                <!-- this paragraph will display error messages related to the name input field -->
+
+                <label for="email"> Email Address</label>
+                <input id="email" name="email" type="email" required autocomplete="email">
+                <small id="emailHelp" class="help">Enter your valid email address.</small>
+                <!-- this is an input field for email with validation attributes -->
+                <p class="error" id="emailError"></p>
+                <!-- this paragraph will display error messages related to the email input field -->
+
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" required minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" aria-describedby="pwdHelp"><!-- this is an input field for password with validation attributes -->
+                <small id="pwdHelp" class="help">At least 8 Characters with upper, lower, and a number.</small>
+                <!-- this small element provides additional help text for the password input field -->
+                <p class="error" id="passwordError"></p>
+                <!-- this paragraph will display error messages related to the password input field -->
+
+                <label for="phone">Phone Number (optional)</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" pattern="^\+?[0-9\s\-]{7,15}$" placeholder="+358 44 123 4567">
+                <!-- this is an input field for an optional phone number with validation attributes -->
+                <p class="error" id="phoneError"></p>
+                <!-- this paragraph will display error messages related to the phone input field -->
+                <label>
+                    <input id="companyToggle" type="checkbox"> Register as a company
+                </label> <!-- this checkbox allows users to indicate if they are registering as a company -->
+                <div id="companyFields" hidden>
+                    <!-- this div contains company-related fields and is hidden by default -->
+                    <label for="company">Company Name</label>
+                    <input id="company" name="company" type="text" mindlength="2">
+                    <p class="error" id="companyError"></p>
+                    <!-- this paragraph will display error messages related to the company input field -->
+                </div>
+            </fieldset>
+
+            <input type="text" id="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true"
+                style="position:absolute; left:-9999px;"> <!-- honeypot field for spam prevention, hidden from users -->
+
+            <button type="submit" class="btn"> Create Account</button> <!-- submit button for the form -->
+            <button type="button" id="clearBtn" class="btn-secondary">Clear</button> <!-- button to clear the form -->
+        </form> 
+    </main>
+    <script src="app.js"></script> <!-- this links to an external JavaScript file -->
+</body>
+
+</html>

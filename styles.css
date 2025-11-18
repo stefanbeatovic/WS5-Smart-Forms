@@ -1,0 +1,119 @@
+/* styles.css */
+
+/* Defaults */
+* {
+    margin: 10px;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+/* defining CSS variables for consistent colors*/
+:root {
+    --brand: #019dd5;
+    --danger: #c0392b;
+    --ok: #2e7d32;
+}
+
+/* setting default font family and removing default margin from body */
+body {
+    font-family: system-ui, 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+/*limits content width and also adds padding*/
+.container {
+    max-width: 680px;
+    margin: 18px auto;
+    padding: 0 14px;
+}
+
+/*Styles labels as blocks*/
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+/*Inherits the font styles*/
+input,
+button {
+    font: intherit;
+}
+
+/* Creates input appearances based on the type*/
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    width: 100px;
+    padding: 10px 12px;
+    border: 1px solid #cfd7e6;
+    border-radius: 8px;
+    margin-top: 6px;
+}
+
+/*focus styling*/
+
+input:focus {
+    outline: 3px solid rgba(1, 157, 213, 0.25);
+    border-color: var(--brand);
+}
+
+/*Invalid inputs are highlighted and display box with border*/
+input:invalid[aria-invalid="true"] {
+    border-color: var(--danger);
+    background: #fff5f5;
+}
+
+/*marks valid entries with green border*/
+input:valid {
+    border-color: #a9d6c9;
+}
+
+/*help text in grey*/
+.help {
+    color: #5b6b7c;
+}
+
+/*error text in red with minimum height*/
+.error {
+    color: var(--danger);
+    margin: 6px 0 0;
+    min-height: 1.2em;
+}
+
+/*hides accessibility elements*/
+.visually-hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+/*styles the error summary*/
+#error-summary {
+    background: #fff3f3;
+    border-left: 6px solid var(--danger);
+    padding: 12px;
+    border-radius: 8px;
+    margin: 0 0 12px;
+}
+
+/*Button Styling*/
+.btn {
+    background: darkgreen;
+    color: #fff;
+    border: 1px solid #0d4a62;
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-top: 14px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: #eef2f7;
+    color: #1f2a3a;
+    border: 1px solid #cfd7e6;
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-left: 8px;
+    cursor: pointer;
+}
